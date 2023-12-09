@@ -1,7 +1,7 @@
 use std::fs;
 fn main() {
     // read the input
-    let lines = fs::read_to_string("input.txt").expect("invalid text file");
+    let lines = fs::read_to_string("day1/input.txt").expect("invalid text file");
 
     // Part 1
     let sum: usize = lines
