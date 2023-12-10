@@ -23,6 +23,12 @@ impl Game {
             self.sets.iter().filter_map(|set| set.blue).max(),
         )
     }
+
+    #[cfg(feature = "part2")]
+    fn get_cubes_power(&self) -> usize {
+        let (red, green, blue) = self.get_max_cubes();
+        red.unwrap_or(1) * green.unwrap_or(1) * blue.unwrap_or(1)
+    }
 }
 impl From<&str> for Game {
     fn from(value: &str) -> Self {
@@ -75,6 +81,9 @@ fn main() {
         })
         .map(|g| g.id)
         .sum();
+
+    #[cfg(feature = "part2")]
+    let sum: usize = games.iter().map(|game| game.get_cubes_power()).sum();
 
     println!("The sum is = {sum}");
 }
