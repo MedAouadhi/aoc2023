@@ -1,10 +1,5 @@
 [workspace]
-members = [
-    "day1",
-    "day2"
-]
+members = ["day1", "day2", "day3"]
 
 [workspace.dependencies]
-regex = {version = "1.10.2"}
-
-
+regex = { version = "1.10.2" }
