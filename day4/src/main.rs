@@ -126,7 +126,6 @@ mod tests {
             .iter()
             .map(|&num| 1 + get_cards_count(&cards, num, &mut memo))
             .sum();
-        // let sum = get_cards_count(&cards, 1, &mut memo);
         println!("sum is {sum}");
         assert!(sum == 30);
     }
